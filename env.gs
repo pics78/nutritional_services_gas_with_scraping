@@ -60,38 +60,43 @@ const COMMON_INFO = {
         'sourceTableRow': 10,
         'digits': 0,
       },
-      /*カルシウム*/ 'Cal': {
+      /*カリウム*/ 'K': {
         'sheetCol': 'I',
+        'sourceTableRow': 11,
+        'digits': 0,
+      },
+      /*カルシウム*/ 'Cal': {
+        'sheetCol': 'J',
         'sourceTableRow': 12,
         'digits': 0,
       },
       /*鉄*/ 'Fe': {
-        'sheetCol': 'J',
+        'sheetCol': 'K',
         'sourceTableRow': 15,
         'digits': 1,
       },
       /*ビタミンA*/ 'VA': {
-        'sheetCol': 'K',
+        'sheetCol': 'L',
         'sourceTableRow': 28,
         'digits': 0,
       },
       /*ビタミンB1*/ 'VB1': {
-        'sheetCol': 'L',
+        'sheetCol': 'M',
         'sourceTableRow': 35,
         'digits': 2,
       },
       /*ビタミンB2*/ 'VB2': {
-        'sheetCol': 'M',
+        'sheetCol': 'N',
         'sourceTableRow': 36,
         'digits': 2,
       },
       /*ビタミンC*/ 'VC': {
-        'sheetCol': 'N',
+        'sheetCol': 'O',
         'sourceTableRow': 44,
         'digits': 0,
       },
       /*食塩相当量*/ 'Sal': {
-        'sheetCol': 'O',
+        'sheetCol': 'P',
         'sourceTableRow': 53,
         'digits': 1,
       },
