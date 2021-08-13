@@ -29,12 +29,13 @@ function setError(sheet, range, value) { setCellProp(sheet, range, COMMON_INFO.A
  * value: 100gあたり栄養価
  */
 function makeFuncForCell(cell, value) {
+  const formedVal = value.replace(/^\(?([\d.]+)\)?$/, "$1");
   const col = cell.replace(/\d+$/, "");
   const row = cell.replace(/^[A-Z]+/, "");
   const weightCell = COMMON_INFO.calculateNutritionalValues.ranges.weightCol + row;
   const digits = Object.values(COMMON_INFO.calculateNutritionalValues.nutInfo)
     .find(elem => elem.sheetCol == col).digits;
-  return Utilities.formatString("=round(%f*(%s*0.01), %d)", value, weightCell, digits);
+  return Utilities.formatString("=round(%f*(%s*0.01), %d)", formedVal, weightCell, digits);
 }
 
 /**
@@ -51,7 +52,7 @@ function makeSumFunc(col, total) {
  * [util]成分値が通常の数値か計算不要の記号等かどうか判定する
  */
 function checkNormalValue(value) {
-  return value == 'Tr' || value == '-' || /^\([\d\.Tr]+\)$/.test(value) ? false : true;
+  return value == '-' || /\(?Tr\)?/.test(value) ? false : true;
 }
 
 /**
